@@ -1,0 +1,55 @@
+
+
+# Installation Guide
+
+## 1. Copy module
+
+Place the file:
+
+TenvisJPT3815W.pm
+
+into:
+
+/usr/share/perl5/ZoneMinder/Control/
+
+
+## 2. Set authentication
+
+Edit the file and replace:
+
+PUT_YOUR_BASE64_HERE
+
+with your own credentials encoded in base64.
+
+## 3. Configure ZoneMinder
+
+### Create Control Type
+
+Name: TenvisJPT3815W  
+Protocol: TenvisJPT3815W  
+Type: Local
+
+Enable:
+
+- Can Move  
+- Can Move Continuous  
+- Can Pan  
+- Can Tilt
+
+### In Monitor
+
+Control Address:
+
+192.168.x.x
+
+(no http, no user/pass)
+
+## 4. Restart
+
+sudo systemctl restart zoneminder
+
+
+## 5. Test
+
+Use arrows in ZoneMinder interface.  
+Camera should stop when button is released.
